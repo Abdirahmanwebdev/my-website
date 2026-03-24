@@ -1,0 +1,51 @@
+* {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
+    body {line-height:1.6; background:#f4f4f4; color:#333;}
+    a {text-decoration:none; color:#333;}
+    header {background:#1e90ff; color:white; padding:50px 20px; text-align:center;}
+    header h1 {font-size:3rem; margin-bottom:10px;}
+    header p {font-size:1.2rem;}
+    nav {background:#333; padding:10px; text-align:center;}
+    nav a {color:white; margin:0 15px; font-weight:bold;}
+    nav a:hover {color:#1e90ff;}
+
+    section {padding:60px 20px; max-width:1000px; margin:0 auto;}
+    h2 {color:#1e90ff; margin-bottom:20px;}
+
+    /* Projects slider */
+    .slider {position:relative; overflow:hidden; border-radius:8px; margin-bottom:40px;}
+    .slides {display:flex; transition:0.5s ease-in-out;}
+    .slides img {width:100%; flex-shrink:0;}
+    .prev, .next {position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; padding:10px; cursor:pointer; border-radius:50%;}
+    .prev {left:10px;} .next {right:10px;}
+
+    /* About */
+    #about p {font-size:1rem;}
+
+    /* Contact */
+    form {background:white; padding:20px; border-radius:8px; max-width:600px; margin:0 auto; box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+    input, textarea {width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px;}
+    button {padding:10px 20px; border:none; background:#1e90ff; color:white; border-radius:5px; cursor:pointer;}
+    button:hover {background:#0f78d4;}
+
+    footer {background:#333; color:white; text-align:center; padding:20px;}
+    footer a {color:white; margin:0 10px;}
+#scrollBtn {
+  display: none; /* marka hore ma muuqdo */
+  position: fixed; /* meel joogto ah */
+  bottom: 20px; /* ka hooseysa bogga */
+  right: 30px; /* dhinaca midig */
+  z-index: 99; /* mar walba kor */
+  border: none;
+  outline: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+#scrollBtn:hover {
+  background-color: #333;
+}
