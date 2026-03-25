@@ -1,51 +1,184 @@
-* {margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
-    body {line-height:1.6; background:#f4f4f4; color:#333;}
-    a {text-decoration:none; color:#333;}
-    header {background:#1e90ff; color:white; padding:50px 20px; text-align:center;}
-    header h1 {font-size:3rem; margin-bottom:10px;}
-    header p {font-size:1.2rem;}
-    nav {background:#333; padding:10px; text-align:center;}
-    nav a {color:white; margin:0 15px; font-weight:bold;}
-    nav a:hover {color:#1e90ff;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#0f172a;color:white;overflow-x:hidden;}
 
-    section {padding:60px 20px; max-width:1000px; margin:0 auto;}
-    h2 {color:#1e90ff; margin-bottom:20px;}
-
-    /* Projects slider */
-    .slider {position:relative; overflow:hidden; border-radius:8px; margin-bottom:40px;}
-    .slides {display:flex; transition:0.5s ease-in-out;}
-    .slides img {width:100%; flex-shrink:0;}
-    .prev, .next {position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; padding:10px; cursor:pointer; border-radius:50%;}
-    .prev {left:10px;} .next {right:10px;}
-
-    /* About */
-    #about p {font-size:1rem;}
-
-    /* Contact */
-    form {background:white; padding:20px; border-radius:8px; max-width:600px; margin:0 auto; box-shadow:0 2px 8px rgba(0,0,0,0.2);}
-    input, textarea {width:100%; padding:10px; margin-bottom:15px; border:1px solid #ccc; border-radius:5px;}
-    button {padding:10px 20px; border:none; background:#1e90ff; color:white; border-radius:5px; cursor:pointer;}
-    button:hover {background:#0f78d4;}
-
-    footer {background:#333; color:white; text-align:center; padding:20px;}
-    footer a {color:white; margin:0 10px;}
-#scrollBtn {
-  display: none; /* marka hore ma muuqdo */
-  position: fixed; /* meel joogto ah */
-  bottom: 20px; /* ka hooseysa bogga */
-  right: 30px; /* dhinaca midig */
-  z-index: 99; /* mar walba kor */
-  border: none;
-  outline: none;
-  background-color: blue;
-  color: white;
-  cursor: pointer;
-  padding: 10px 15px;
-  border-radius: 5px;
-  font-size: 18px;
-  transition: background 0.3s;
+/* NAV */
+/* nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+nav a{color:white;text-decoration:none;transition:0.3s;}
+nav a:hover{color:#38bdf8;} */
+nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(10px);
+  box-shadow:0 4px 20px rgba(0,0,0,0.1);
+  z-index:1000;
 }
 
-#scrollBtn:hover {
-  background-color: #333;
+/* LOGO */
+.logo{
+  font-weight:bold;
+  font-size:22px;
+  color:#0f172a;
 }
+
+/* LINKS (Laptop) */
+.links{
+  display:flex;
+  gap:30px;
+}
+
+.links a{
+  color:#0f172a;
+  text-decoration:none;
+  font-weight:500;
+  position:relative;
+  transition:0.3s;
+}
+
+.links a:hover{
+  color:#38bdf8;
+}
+
+.links a::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  background:#38bdf8;
+  left:0;
+  bottom:-5px;
+  transition:0.3s;
+}
+
+.links a:hover::after{
+  width:100%;
+}
+
+/* HAMBURGER (hidden desktop) */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+}
+
+.menu-toggle span{
+  width:25px;
+  height:3px;
+  background:#0f172a;
+  margin:4px 0;
+  transition:0.3s;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .links{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:white;
+    flex-direction:column;
+    width:200px;
+    display:none; /* hide links on mobile by default */
+    padding:20px;
+    border-radius:0 0 0 10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  .links.active{
+    display:flex; /* show when hamburger clicked */
+  }
+
+  .menu-toggle{
+    display:flex; /* show hamburger */
+  }
+
+  .links a{
+    color:#0f172a; /* dark text */
+    padding:10px 0;
+  }
+
+  .menu-toggle span{
+    background:#0f172a; /* dark lines */
+  }
+}
+/* HEADER */
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+header h1{font-size:3rem;}
+header p{color:#94a3b8;}
+
+/* BUTTON */
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#38bdf8;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* SECTION */
+section{padding:80px 20px;}
+
+/* PROFILE */
+.profile{text-align:center;}
+.profile img{
+  width:150px;
+  border-radius:50%;
+  border:3px solid #38bdf8;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.card{
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  padding:15px;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+}
+.card:hover{transform:translateY(-10px) scale(1.03);}
+.card img{width:100%;border-radius:10px;}
+
+/* MAP */
+iframe{width:100%;height:300px;border:none;border-radius:10px;}
+
+/* CONTACT */
+form{display:flex;flex-direction:column;gap:10px;max-width:400px;margin:auto;}
+input,textarea{
+  padding:10px;
+  border:none;
+  border-radius:8px;
+}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;background:#020617;}
+
+/* ANIMATION */
+.fade{opacity:0;transform:translateY(40px);transition:1s;}
+.show{opacity:1;transform:translateY(0);}
